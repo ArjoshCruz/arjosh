@@ -20,18 +20,18 @@
 </head>
 <body>
     <!-- Main Container -->
-    <main class="min-h-screen grid grid-cols-12 bg-white">
+    <main class="min-h-screen grid grid-cols-12 bg-white mt-12">
 
         <!-- Left Margin -->
         <div class="col-span-2"></div>
 
-        <!-- User Info -->
+        <!-- User Info - Aside -->
         <aside class="col-span-2 pt-10">
             
             <img 
                 src="images/pfp.png" 
                 alt="Profile Picture" 
-                class="rounded-full w-32 h-32 object-cover"
+                class="rounded-full w-28 h-28 object-cover"
             >
 
             <!-- Name -->
@@ -78,7 +78,7 @@
             <!-- Navigation -->
             <nav class="flex flex-col gap-2 mt-6">
                 
-                <a href="#" class="bg-[#DDE3E6] px-4 py-3 rounded-xl flex items-center gap-3 transition">
+                <a href="index.html" class="bg-[#DDE3E6] px-4 py-3 rounded-xl flex items-center gap-3 transition">
                     <span><i class="fa-solid fa-house"></i></span>
                     Home
                 </a>
@@ -115,10 +115,47 @@
         </aside>
 
         <!-- Content -->
-        <section class="col-span-7 pt-10">
-            <p class="text-2xl font-semibold">
-                Hi
-            </p>
+        <section class="col-span-7 pt-10 ms-32">
+            <!-- Header -->
+            <header>
+                <div class="flex items-center justify-between mb-6">
+                    
+                    <!-- Left Side -->
+                    <div>
+                        <h3 class="text-3xl font-semibold">Hi, I am Ronald Josiah</h3>
+
+                        <h4 class="text-md font-light text-[#575656] flex items-center">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span class="ps-2">Cavite, Philippines</span>
+                        </h4>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="flex items-center gap-3">
+                        <!-- Toggle Switch -->
+                        <label class="relative inline-flex items-end cursor-pointer">
+                            <input type="checkbox" id="darkToggle" class="sr-only peer">
+                            
+                            <div class="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-gray-800 transition"></div>
+                            
+                            <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-5"></div>
+                        </label>
+
+                        <span class="text-sm text-gray-600">Dark</span>
+                    </div>
+                </div>
+
+                <div class="">
+                    <a href="#" class="bg-[#000000] text-[#FFFFFF] px-12 py-2 me-4">
+                        <i class="fa-solid fa-download pe-2"></i>Download Resume
+                    </a>
+                    <a href="#" class="bg-[#FFFFFF] text-[#000000] px-8 py-2 shadow-md">
+                        <i class="fa-solid fa-envelope pe-2"></i>Send Email
+                    </a>
+                </div>
+            </header>
+            <!-- Header -->
+             
         </section>
 
         <!-- Right Margin -->
