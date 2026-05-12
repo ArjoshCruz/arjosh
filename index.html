@@ -62,6 +62,7 @@
             <p class="text-lg mt-2 font-light text-[#575656]">
                 Web Developer
             </p>
+            
 
             <!-- Status -->
             <div class="flex items-center gap-2 mt-4 flex-wrap">
@@ -77,6 +78,7 @@
 
             <!-- Navigation -->
             <nav class="flex flex-col gap-2 mt-6">
+                <hr class="mb-4 border-gray-300">
                 
                 <a href="index.html" class="bg-[#DDE3E6] px-4 py-3 rounded-xl flex items-center gap-3 transition">
                     <span><i class="fa-solid fa-house"></i></span>
@@ -115,9 +117,9 @@
         </aside>
 
         <!-- Content -->
-        <section class="col-span-7 pt-10 ms-32">
+        <section class="col-span-6 pt-10 ms-20">
             <!-- Header -->
-            <header>
+            <header class="mb-12">
                 <div class="flex items-center justify-between mb-6">
                     
                     <!-- Left Side -->
@@ -147,7 +149,7 @@
 
                 <div class="">
                     <a href="#" class="bg-[#000000] text-[#FFFFFF] px-12 py-2 me-4">
-                        <i class="fa-solid fa-download pe-2"></i>Download Resume
+                        <i class="fa-solid fa-download pe-2"></i>Erm
                     </a>
                     <a href="#" class="bg-[#FFFFFF] text-[#000000] px-8 py-2 shadow-md">
                         <i class="fa-solid fa-envelope pe-2"></i>Send Email
@@ -155,11 +157,262 @@
                 </div>
             </header>
             <!-- Header -->
+
+            <!-- About -->
+            <div class="shadow-sm px-4 py-5 rounded-lg">
+
+                <div class="flex items-center justify-between text-xl">
+
+                    <h3 class="font-bold flex items-center">
+                        <i class="fa-solid fa-circle-exclamation pr-2"></i>
+                        About
+                    </h3>
+
+                </div>
+
+                <!-- Description -->
+                <p class="text-lg mt-4 font-light leading-relaxed">
+                    A passionate developer specializing in HTML, CSS, and JavaScript, and aspiring to become a Full-Stack Developer. I enjoy creating responsive, user-friendly, and visually appealing web applications that deliver smooth and engaging user experiences.
+                </p>
+
+                <p class="text-sm mt-4 font-light leading-relaxed">
+                    Let's connect and see how I can make your wishes come true through innovative web solutions!
+                </p>
+
+            </div>
+            <!-- About -->
+
+            <!-- Info Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- Left Side: Tech + Projects -->
+                <div class="lg:col-span-2 space-y-6">
+
+                    <!-- Tech Stack -->
+                    <div class="shadow-sm px-4 py-5 rounded-lg">
+                        
+                        <div class="flex items-center justify-between text-xl">
+                            <h3 class="font-bold flex items-center">
+                                <i class="fa-solid fa-code pr-2"></i>
+                                Tech Stack
+                            </h3>
+
+                            <a href="#" class="text-sm text-[#575656] hover:underline">
+                                View All
+                            </a>
+                        </div>
+
+                        <p class="text-lg mt-4 font-light leading-relaxed text-[#575656]">
+                            A showcase of my key strengths and abilities that help me excel in my role.
+                        </p>
+
+                        <div class="mt-6 space-y-6">
+
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Front End</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">HTML</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">CSS</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">JavaScript</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">Tailwind CSS</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">Bootstrap 5</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Back End</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">PHP</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">Python</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">Node.js</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Developer Tools</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">Git</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">GitHub</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">VS Code</span>
+                                    <span class="px-4 py-2 bg-white shadow-sm text-xs">PyCharm</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Recent Projects -->
+                    <div class="shadow-sm px-4 py-5 rounded-lg">
+
+                        <div class="flex items-center justify-between text-xl">
+                            <h3 class="font-bold flex items-center">
+                                <i class="fa-solid fa-folder-open pr-2"></i>
+                                Recent Projects
+                            </h3>
+
+                            <a href="#" class="text-sm text-[#575656] hover:underline">
+                                View All
+                            </a>
+                        </div>
+
+                        <p class="text-lg mt-4 font-light leading-relaxed text-[#575656]">
+                            My most recent works I made and contributed to.
+                        </p>
+
+                        <!-- Projects List -->
+                        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                            <!-- Project Card -->
+                            <div class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+                                <h3 class="text-xl font-bold">JeepLink</h3>
+                                <p class="text-[#575656] font-light text-sm mt-1">
+                                    A web-based jeepney navigating tool for commuters
+                                </p>
+                                <a 
+                                    class="text-blue-500 hover:underline text-sm mt-2 inline-block" 
+                                    href="https://jeeplink-app.vercel.app/" 
+                                    target="_blank"
+                                >
+                                    JeepLink App
+                                </a>
+                            </div>
+
+                            <!-- Project Card -->
+                            <div class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+                                <h3 class="text-xl font-bold">James Polymers Manufacturing Corp Website</h3>
+                                <p class="text-[#575656] font-light text-sm mt-1">
+                                    A company website for plastic and rubber molding
+                                </p>
+                                <a 
+                                    class="text-blue-500 hover:underline text-sm mt-2 inline-block" 
+                                    href="https://jamespolymers.com/" 
+                                    target="_blank"
+                                >
+                                    James Polymers Manufacturing Corp Website
+                                </a>
+                            </div>
+
+                            <!-- Project Card -->
+                            <div class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+                                <h3 class="text-xl font-bold">Chick & Twirls</h3>
+                                <p class="text-[#575656] font-light text-sm mt-1">
+                                    An e-commerce website for a fictional fried chicken restaurant. 
+                                </p>
+                                <a 
+                                    class="text-blue-500 hover:underline text-sm mt-2 inline-block" 
+                                    href="https://arjoshcruz.github.io/ChickAndTwirl/index.html" 
+                                    target="_blank"
+                                >
+                                    Chick & Twirls Website
+                                </a>
+                            </div>
+
+                            <!-- Project Card -->
+                            <div class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition">
+                                <h3 class="text-xl font-bold">Ikayokat Bistro</h3>
+                                <p class="text-[#575656] font-light text-sm mt-1">
+                                    A fictional takoyaki restaurant website built with Bootstrap.
+                                </p>
+                                <a 
+                                    class="text-blue-500 hover:underline text-sm mt-2 inline-block" 
+                                    href="https://arjoshcruz.github.io/IkayokatBistro/" 
+                                    target="_blank"
+                                >
+                                    Ikayokat Bistro Website
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Experience -->
+                <div class="h-full">
+
+                    <div class="shadow-sm px-4 py-5 rounded-lg h-full flex flex-col">
+
+                        <!-- Header -->
+                        <div class="flex items-center justify-between text-xl">
+                            <h3 class="font-bold flex items-center">
+                                <i class="fa-solid fa-calendar pr-2"></i>
+                                Experience
+                            </h3>
+
+                            <a href="#" class="text-sm text-[#575656] hover:underline">
+                                View All
+                            </a>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-lg mt-4 font-light leading-relaxed text-[#575656]">
+                            My coding experience.
+                        </p>
+
+                        <!-- Timeline -->
+                        <div class="relative mt-8">
+
+                            <!-- Vertical Line (AUTO HEIGHT) -->
+                            <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-gray-300"></div>
+
+                            <div class="space-y-10">
+
+                                <!-- Item -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-4 top-1 w-5 h-5 rounded-full border-2 border-gray-400 bg-white transform -translate-x-1/2"></div>
+
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-lg">Graduate</span>
+                                        <span class="text-gray-500 text-base">2026</span>
+                                    </div>
+                                    <div class="text-gray-600 text-sm">Emilio Aguinaldo College - Cavite</div>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-4 top-1 w-5 h-5 rounded-full border-2 border-gray-400 bg-white transform -translate-x-1/2"></div>
+
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-lg">Web Developer Intern</span>
+                                        <span class="text-gray-500 text-base">2025</span>
+                                    </div>
+                                    <div class="text-gray-600 text-sm">James Polymers Manufacturing Corp.</div>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-4 top-1 w-5 h-5 rounded-full border-2 border-gray-400 bg-white transform -translate-x-1/2"></div>
+
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-lg">BS Computer Science</span>
+                                        <span class="text-gray-500 text-base">2022</span>
+                                    </div>
+                                    <div class="text-gray-600 text-sm">Emilio Aguinaldo College - Cavite</div>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-4 top-1 w-5 h-5 rounded-full border-2 border-gray-400 bg-white transform -translate-x-1/2"></div>
+
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-lg">Hello World!</span>
+                                        <span class="text-gray-500 text-base">2022</span>
+                                    </div>
+                                    <div class="text-gray-600 text-sm">My first coding experience</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
              
         </section>
 
         <!-- Right Margin -->
-        <div class="col-span-1"></div>
+        <div class="col-span-2"></div>
 
     </main>
 
