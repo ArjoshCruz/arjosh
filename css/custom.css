@@ -14,3 +14,61 @@ body {
     transition: 0.3s ease;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
+/* Dark */
+body.dark {
+  background-color: #0a0f1a;
+  color: #e5e7eb;
+}
+
+body.dark .card {
+  background-color: #181f2a;
+  border-color: #232b3a;
+  color: #e5e7eb;
+}
+
+body.dark h1, body.dark h2, body.dark h3,
+body.dark h4, body.dark h5, body.dark h6 {
+  color: #f3f4f6;
+}
+
+body.dark .text-gray-500 {
+  color: #b6bedc !important;
+}
+
+body.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+body.dark .bg-gray-100 {
+  background-color: #232b3a !important;
+  color: #e5e7eb;
+}
+
+body.dark .bg-gray-50 {
+  background-color: #181f2a !important;
+}
+
+body.dark .border-gray-200 {
+  border-color: #232b3a !important;
+}
+
+body.dark a.hover\:bg-\[#DDE3E6\]:hover,
+body.dark .bg-\[#DDE3E6\] {
+  background-color: #232b3a !important;
+  color: #e5e7eb;
+}
+
+body.dark .bg-white {
+  background-color: #181f2a !important;
+  color: #e5e7eb;
+}
+
+body.dark .shadow-sm,
+body.dark .hover\:shadow-md:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.7) !important;
+}
+
+body.dark .toggle-track {
+  background-color: #e5e7eb !important;
+}
