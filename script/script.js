@@ -1,3 +1,9 @@
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+});
+
 const toggle = document.querySelector('input[type="checkbox"]');
 
 // Restore saved preference

@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
@@ -41,6 +44,7 @@
                             src="images/pfp.png"
                             alt="Profile Picture"
                             class="rounded-full w-28 h-28 object-cover"
+                            data-aos="blur"
                         />
 
                         <!-- Name -->
@@ -152,7 +156,7 @@
             </aside>
 
             <!-- MAIN CONTENT -->
-            <section class="lg:col-span-8 xl:col-span-8 2xl:col-span-9 space-y-6">
+            <section data-aos="fade-up" class="lg:col-span-8 xl:col-span-8 2xl:col-span-9 space-y-6">
 
                 <!-- HEADER -->
                 <div class="card p-7 xl:p-8 lg:sticky lg:top-6">
@@ -753,5 +757,8 @@
 
     <!-- Custom Script -->
     <script type="module" src="script/script.js"></script>
+
+    <!-- Animate on Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

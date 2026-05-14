@@ -101,3 +101,16 @@ body.dark .prevBtn:hover,
 body.dark .nextBtn:hover {
   background-color: #232b3a;
 }
+
+/* AOS */
+[data-aos="blur"] {
+    filter: blur(10px);
+    opacity: 0;
+    transition-property: filter, opacity, transform;
+}
+
+[data-aos="blur"].aos-animate {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+}
