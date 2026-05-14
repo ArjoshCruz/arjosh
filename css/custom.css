@@ -21,6 +21,10 @@ body.dark {
   color: #e5e7eb;
 }
 
+body.dark nav a:hover {
+  color: #181f2a;
+}
+
 body.dark .card {
   background-color: #181f2a;
   border-color: #232b3a;
