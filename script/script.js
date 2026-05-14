@@ -71,3 +71,25 @@ document.querySelectorAll(".slideshow").forEach((slideshow) => {
     });
 
 });
+
+// Back to Top Button
+const backToTopBtn = document.getElementById("backToTop");
+
+// Show button when scrolled down
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+        backToTopBtn.classList.add("opacity-100");
+    } else {
+        backToTopBtn.classList.add("opacity-0", "pointer-events-none");
+        backToTopBtn.classList.remove("opacity-100");
+    }
+});
+
+// Scroll to top smoothly
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
