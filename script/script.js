@@ -142,3 +142,10 @@ function typeEffect() {
 }
 
 typeEffect();
+
+document.addEventListener("mousemove", (e) => {
+    const glow = document.getElementById("cursor-glow");
+
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+});
