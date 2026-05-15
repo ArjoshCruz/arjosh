@@ -101,7 +101,7 @@ backToTopBtn.addEventListener("click", () => {
 });
 
 const roles = [
-    "Web Developer",
+    "Front-End Developer",
     "UI Designer",
     "Full Stack Learner"
 ];
