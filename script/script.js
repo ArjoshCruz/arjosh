@@ -149,3 +149,53 @@ document.addEventListener("mousemove", (e) => {
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
 });
+
+// Particles
+const particles = document.querySelector(".particles");
+
+// MORE particles
+for (let i = 0; i < 180; i++) {
+
+    const dot = document.createElement("span");
+
+    // Completely scattered positions
+    dot.style.left = Math.random() * 100 + "%";
+    dot.style.top = Math.random() * 120 + "%";
+
+    // Random sizes
+    const size = Math.random() * 5 + 1;
+
+    dot.style.width = size + "px";
+    dot.style.height = size + "px";
+
+    // Random blue-ish colors
+    const colors = [
+        "rgba(96,165,250,0.9)",
+        "rgba(129,140,248,0.9)",
+        "rgba(167,139,250,0.9)",
+        "rgba(255,255,255,0.8)"
+    ];
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    dot.style.background = color;
+
+    // Stronger glow
+    dot.style.boxShadow = `
+        0 0 ${Math.random() * 12 + 6}px ${color}
+    `;
+
+    // Different speeds
+    dot.style.animationDuration =
+        (Math.random() * 20 + 15) + "s";
+
+    // Random delays
+    dot.style.animationDelay =
+        -(Math.random() * 20) + "s";
+        
+
+    // Random opacity
+    dot.style.opacity = Math.random();
+
+    particles.appendChild(dot);
+}

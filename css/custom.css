@@ -145,3 +145,53 @@ body.dark .nextBtn:hover {
 
     transition: transform 0.05s linear;
 }
+
+/* Particles Container */
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: -4;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Individual Particles */
+.particles span {
+    position: absolute;
+    border-radius: 9999px;
+
+    /* Better visibility */
+    background: rgba(96, 165, 250, 0.5);
+
+    /* Glow */
+    box-shadow:
+        0 0 6px rgba(96, 165, 250, 0.6),
+        0 0 12px rgba(129, 140, 248, 0.4);
+
+    animation: floatParticle linear infinite;
+
+    will-change: transform, opacity;
+    transform: translate3d(0,0,0);
+}
+
+/* Floating Animation */
+@keyframes floatParticle {
+
+    0% {
+        transform: translate3d(0,0,0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate3d(20px,-50vh,0);
+    }
+
+    100% {
+        transform: translate3d(-20px,-110vh,0);
+        opacity: 0;
+    }
+}
