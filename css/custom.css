@@ -7,6 +7,8 @@ body {
         #f8fafc;
 }
 
+/* Card */
+
 .card {
     background: white;
     border-radius: 16px;
@@ -81,8 +83,6 @@ body.dark .toggle-track {
   background-color: #e5e7eb !important;
 }
 
-/* Projects */
-
 /* Active Dot */
 body.dark .dot.bg-black {
   background-color: #ffffff !important;
@@ -119,6 +119,7 @@ body.dark .nextBtn:hover {
     transform: translateY(0);
 }
 
+/* Cool Effects */
 #cursor-glow {
     position: fixed;
 

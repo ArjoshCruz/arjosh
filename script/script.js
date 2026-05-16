@@ -1,3 +1,4 @@
+// AOS
 AOS.init({
     duration: 800,
     once: true,
@@ -106,6 +107,7 @@ const roles = [
     "Full Stack Learner"
 ];
 
+// Typing Effect
 const typing = document.getElementById("typing");
 
 let roleIndex = 0;
@@ -143,6 +145,7 @@ function typeEffect() {
 
 typeEffect();
 
+// Cursor Glow
 document.addEventListener("mousemove", (e) => {
     const glow = document.getElementById("cursor-glow");
 
@@ -153,7 +156,7 @@ document.addEventListener("mousemove", (e) => {
 // Particles
 const particles = document.querySelector(".particles");
 
-// MORE particles
+// More particles
 for (let i = 0; i < 180; i++) {
 
     const dot = document.createElement("span");
@@ -200,6 +203,7 @@ for (let i = 0; i < 180; i++) {
     particles.appendChild(dot);
 }
 
+// Loading Bar
 window.addEventListener("load", () => {
     const loader = document.getElementById("top-loader-bar");
 
