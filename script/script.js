@@ -199,3 +199,14 @@ for (let i = 0; i < 180; i++) {
 
     particles.appendChild(dot);
 }
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("top-loader-bar");
+
+    loader.style.animation = "loadBar 1.2s ease forwards";
+
+    setTimeout(() => {
+        document.getElementById("top-loader").style.display = "none";
+    }, 1300);
+});
+

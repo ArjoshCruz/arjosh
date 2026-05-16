@@ -195,3 +195,52 @@ body.dark .nextBtn:hover {
         opacity: 0;
     }
 }
+
+/* Loader wrapper */
+#top-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 99999;
+}
+
+/* Animated bar */
+#top-loader-bar {
+    height: 100%;
+    width: 0%;
+    
+    background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+    
+    box-shadow:
+        0 0 8px rgba(56, 189, 248, 0.8),
+        0 0 16px rgba(167, 139, 250, 0.6);
+
+    animation: loadBar 1.5s ease forwards;
+}
+
+body.dark #top-loader-bar {
+    background: linear-gradient(90deg, #60a5fa, #22d3ee, #a78bfa);
+    
+    box-shadow:
+        0 0 12px rgba(34, 211, 238, 0.9),
+        0 0 24px rgba(96, 165, 250, 0.7);
+}
+
+/* Animation */
+@keyframes loadBar {
+    0% {
+        width: 0%;
+        opacity: 1;
+    }
+    80% {
+        width: 90%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
