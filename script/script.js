@@ -79,26 +79,52 @@ document.querySelectorAll(".slideshow").forEach((slideshow) => {
 
 });
 
-// Back to Top Button
-const backToTopBtn = document.getElementById("backToTop");
+// Scroll Progress Circle
+const scrollProgress = document.getElementById("scrollProgress");
 
-// Show button when scrolled down
+const progressBar =
+    document.querySelector(".progress-bar");
+
+const radius = 30;
+
+const circumference = 2 * Math.PI * radius;
+
+progressBar.style.strokeDasharray = circumference;
+
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.remove("opacity-0", "pointer-events-none");
-        backToTopBtn.classList.add("opacity-100");
+
+    const scrollTop =
+        window.scrollY;
+
+    const docHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        scrollTop / docHeight;
+
+    const offset =
+        circumference - progress * circumference;
+
+    progressBar.style.strokeDashoffset = offset;
+
+    // Show after scrolling
+    if (scrollTop > 200) {
+        scrollProgress.classList.add("show");
     } else {
-        backToTopBtn.classList.add("opacity-0", "pointer-events-none");
-        backToTopBtn.classList.remove("opacity-100");
+        scrollProgress.classList.remove("show");
     }
+
 });
 
-// Scroll to top smoothly
-backToTopBtn.addEventListener("click", () => {
+// Scroll To Top
+scrollProgress.addEventListener("click", () => {
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 });
 
 const roles = [

@@ -321,12 +321,33 @@
 
     </main>
 
-    <!-- Back to Top Button for Mobile -->
-    <button
-        id="backToTop"
-        class="fixed bottom-5 right-5 z-50 bg-black text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 lg:hidden opacity-0 pointer-events-none"
-    >
+    <!-- Scroll Progress Circle -->
+    <button id="scrollProgress">
+
+        <svg width="70" height="70" viewBox="0 0 70 70">
+
+            <!-- Background Circle -->
+            <circle
+                cx="35"
+                cy="35"
+                r="30"
+                stroke-width="4"
+                class="progress-bg"
+            />
+
+            <!-- Progress Circle -->
+            <circle
+                cx="35"
+                cy="35"
+                r="30"
+                stroke-width="4"
+                class="progress-bar"
+            />
+
+        </svg>
+
         <i class="fa-solid fa-arrow-up"></i>
+
     </button>
 
     <!-- Custom Script -->
