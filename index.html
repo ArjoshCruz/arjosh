@@ -40,24 +40,29 @@
         const lastSeen = localStorage.getItem("portfolio_intro_seen");
         const ONE_HOUR = 60 * 60 * 1000;
 
-        if (
-            lastSeen &&
-            Date.now() - Number(lastSeen) < ONE_HOUR
-        ) {
+        const shouldSkip = lastSeen && Date.now() - Number(lastSeen) < ONE_HOUR;
+
+        if (shouldSkip) {
             document.documentElement.classList.add("skip-intro");
+        } else {
+            // Mark the document so CSS can disable scrolling while intro is active
+            document.documentElement.classList.add("intro-active");
         }
     })();
     </script>
 
 </head>
 <body>
+   <!-- Intro Screen -->
     <div
         id="intro-screen"
         class="fixed inset-0 z-[99999] flex items-center justify-center bg-white"
     >
 
-        <!-- Particles (show during intro) -->
+        <!-- Particles -->
         <div class="particles" aria-hidden="true"></div>
+
+        <div id="cursor-glow-intro"></div>
 
         <div
             id="intro-card"

@@ -134,7 +134,7 @@ const roles = [
 ];
 
 // Typing Effect
-const typing = document.getElementById("typing");
+const typingElements = document.querySelectorAll(".typing");
 
 let roleIndex = 0;
 let charIndex = 0;
@@ -174,9 +174,18 @@ typeEffect();
 // Cursor Glow
 document.addEventListener("mousemove", (e) => {
     const glow = document.getElementById("cursor-glow");
+    const introGlow = document.getElementById("cursor-glow-intro");
 
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
+    if (glow) {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+    }
+
+    if (introGlow) {
+        // Position relative to the viewport as well — the intro glow is absolute inside intro
+        introGlow.style.left = e.clientX + "px";
+        introGlow.style.top = e.clientY + "px";
+    }
 });
 
 // Particles: find all particle containers (intro overlay + global) and populate each
@@ -323,8 +332,11 @@ window.addEventListener("load", () => {
 
             intro.remove();
 
+            // Re-enable scrolling by removing the intro-active marker
+            document.documentElement.classList.remove("intro-active");
+
         }, 800);
 
-    }, 2200);
+    }, 4000);
 
 });

@@ -169,6 +169,29 @@ body.dark .nextBtn:hover {
     transition: transform 0.05s linear;
 }
 
+/* Intro-specific cursor glow (visible on intro overlay). Kept separate so we don't have to fiddle
+   with global stacking contexts — it sits behind the intro card but above the overlay background. */
+#cursor-glow-intro {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59,130,246,0.18) 0%,
+            rgba(59,130,246,0.08) 35%,
+            transparent 70%
+        );
+
+    border-radius: 9999px;
+    filter: blur(70px);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* behind intro-card (z-10) but above overlay */
+    transition: transform 0.05s linear;
+}
+
 /* Particles Container */
 .particles {
     position: fixed;
@@ -278,7 +301,7 @@ body.dark #top-loader-bar {
         0 0 8px rgba(56, 189, 248, 0.8),
         0 0 16px rgba(167, 139, 250, 0.6);
 
-    transition: width 2s ease;
+    transition: width 3s ease;
 }
 
 /* Dark Mode */
@@ -297,6 +320,13 @@ body.dark #intro-progress {
 
 .skip-intro #intro-screen {
     display: none !important;
+}
+
+/* Disable scrolling while intro is active */
+.intro-active, .intro-active body, .intro-active html {
+    height: 100%;
+    overflow: hidden !important;
+    touch-action: none;
 }
 
 /* Animation */
