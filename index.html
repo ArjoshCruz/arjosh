@@ -34,22 +34,72 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/custom.css" />
 
+    <!-- Intro Skip Logic -->
+    <script>
+    (() => {
+        const lastSeen = localStorage.getItem("portfolio_intro_seen");
+        const ONE_HOUR = 60 * 60 * 1000;
+
+        if (
+            lastSeen &&
+            Date.now() - Number(lastSeen) < ONE_HOUR
+        ) {
+            document.documentElement.classList.add("skip-intro");
+        }
+    })();
+    </script>
+
 </head>
 <body>
+    <div
+        id="intro-screen"
+        class="fixed inset-0 z-[99999] flex items-center justify-center bg-white"
+    >
+
+        <!-- Particles (show during intro) -->
+        <div class="particles" aria-hidden="true"></div>
+
+        <div
+            id="intro-card"
+            class="bg-white rounded-3xl shadow-2xl p-10 text-center w-[380px] relative z-10"
+        >
+
+            <img
+                src="images/pfp.png"
+                class="w-32 h-32 rounded-full mx-auto"
+            >
+
+            <h2 class="text-3xl font-bold mt-6">
+                Ronald Josiah
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+                Front-End Developer
+            </p>
+
+            <div
+                class="mt-6 h-2 bg-gray-200 rounded-full overflow-hidden"
+            >
+                <div id="intro-progress"></div>
+            </div>
+
+        </div>
+
+    </div>
     
+    <!-- Global Particles -->
+    <div class="particles" aria-hidden="true"></div>
+
     <!-- Top Loading Bar -->
     <div id="top-loader">
         <div id="top-loader-bar"></div>
     </div>
 
-    <!-- Particles -->
-    <div class="particles"></div>
-
     <!-- Cursor Glow -->
     <div id="cursor-glow"></div>
 
     <!-- Main Wrapper -->
-    <main class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main id="main-content" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8 opacity-0">
 
         <!-- Responsive Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14">
@@ -57,7 +107,7 @@
             <!-- SIDEBAR -->
             <aside class="lg:col-span-4 xl:col-span-4 2xl:col-span-3">
 
-                <div class="card p-6 lg:sticky lg:top-6">
+                <div id="sidebar-profile-card" class="card p-6 lg:sticky lg:top-6">
 
                     <!-- Profile -->
                     <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -846,5 +896,9 @@
 
     <!-- Animate on Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+    </script>
 </body>
 </html>

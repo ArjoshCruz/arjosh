@@ -179,64 +179,152 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = e.clientY + "px";
 });
 
-// Particles
-const particles = document.querySelector(".particles");
+// Particles: find all particle containers (intro overlay + global) and populate each
+const particleContainers = document.querySelectorAll(".particles");
 
-// More particles
-for (let i = 0; i < 180; i++) {
+particleContainers.forEach((container) => {
+    for (let i = 0; i < 180; i++) {
 
-    const dot = document.createElement("span");
+        const dot = document.createElement("span");
 
-    // Completely scattered positions
-    dot.style.left = Math.random() * 100 + "%";
-    dot.style.top = Math.random() * 120 + "%";
+        // Completely scattered positions
+        dot.style.left = Math.random() * 100 + "%";
+        dot.style.top = Math.random() * 120 + "%";
 
-    // Random sizes
-    const size = Math.random() * 5 + 1;
+        // Random sizes
+        const size = Math.random() * 5 + 1;
 
-    dot.style.width = size + "px";
-    dot.style.height = size + "px";
+        dot.style.width = size + "px";
+        dot.style.height = size + "px";
 
-    // Random blue-ish colors
-    const colors = [
-        "rgba(96,165,250,0.9)",
-        "rgba(129,140,248,0.9)",
-        "rgba(167,139,250,0.9)",
-        "rgba(255,255,255,0.8)"
-    ];
+        // Random blue-ish colors
+        const colors = [
+            "rgba(96,165,250,0.9)",
+            "rgba(129,140,248,0.9)",
+            "rgba(167,139,250,0.9)",
+            "rgba(255,255,255,0.8)"
+        ];
 
-    const color = colors[Math.floor(Math.random() * colors.length)];
+        const color = colors[Math.floor(Math.random() * colors.length)];
 
-    dot.style.background = color;
+        dot.style.background = color;
 
-    // Stronger glow
-    dot.style.boxShadow = `
-        0 0 ${Math.random() * 12 + 6}px ${color}
-    `;
+        // Stronger glow
+        dot.style.boxShadow = `
+            0 0 ${Math.random() * 12 + 6}px ${color}
+        `;
 
-    // Different speeds
-    dot.style.animationDuration =
-        (Math.random() * 20 + 15) + "s";
+        // Different speeds
+        dot.style.animationDuration =
+            (Math.random() * 20 + 15) + "s";
 
-    // Random delays
-    dot.style.animationDelay =
-        -(Math.random() * 20) + "s";
-        
+        // Random delays
+        dot.style.animationDelay =
+            -(Math.random() * 20) + "s";
 
-    // Random opacity
-    dot.style.opacity = Math.random();
+        // Random opacity
+        dot.style.opacity = Math.random();
 
-    particles.appendChild(dot);
-}
+        container.appendChild(dot);
+    }
+});
 
 // Loading Bar
 window.addEventListener("load", () => {
-    const loader = document.getElementById("top-loader-bar");
 
-    loader.style.animation = "loadBar 1.2s ease forwards";
+    const introExists =
+        document.getElementById("intro-screen");
+
+    // Don't show top loader if intro exists
+    if (introExists) {
+        document.getElementById("top-loader")?.remove();
+        return;
+    }
+
+    const loader =
+        document.getElementById("top-loader-bar");
+
+    if (!loader) return;
+
+    loader.style.animation =
+        "loadBar 1.2s ease forwards";
 
     setTimeout(() => {
-        document.getElementById("top-loader").style.display = "none";
+        document.getElementById("top-loader")
+            ?.style.setProperty("display", "none");
     }, 1300);
+
 });
 
+// Intro Screen with localStorage to prevent showing on every visit
+const INTRO_KEY = "portfolio_intro_seen";
+const ONE_HOUR = 60 * 60 * 1000;
+
+window.addEventListener("load", () => {
+
+    const intro = document.getElementById("intro-screen");
+    const mainContent = document.getElementById("main-content");
+
+    // Safety check
+    if (!intro || !mainContent) return;
+
+    const lastSeen = localStorage.getItem(INTRO_KEY);
+
+    const shouldShow =
+        !lastSeen ||
+        Date.now() - Number(lastSeen) > ONE_HOUR;
+
+    // Skip intro if already seen within 1 hour
+    if (!shouldShow) {
+
+        intro.remove();
+
+        mainContent.classList.remove("opacity-0");
+        mainContent.classList.add("opacity-100");
+
+        return;
+    }
+
+    const progress = document.getElementById("intro-progress");
+
+    // Animate progress bar
+    setTimeout(() => {
+
+        if (progress) {
+            progress.style.width = "100%";
+        }
+
+    }, 100);
+
+    // After loading animation completes
+    setTimeout(() => {
+
+        // Fade out intro
+        intro.style.transition = "opacity 0.8s ease";
+        intro.style.opacity = "0";
+
+        // Fade in main content
+        mainContent.classList.add(
+            "transition-opacity",
+            "duration-700",
+            "opacity-100"
+        );
+
+        mainContent.classList.remove("opacity-0");
+
+        // Save timestamp
+        localStorage.setItem(
+            INTRO_KEY,
+            Date.now()
+        );
+
+        // Remove intro from DOM
+        setTimeout(() => {
+
+            intro.remove();
+
+        }, 800);
+
+    }, 2200);
+
+});
