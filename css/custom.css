@@ -268,41 +268,38 @@ body.dark .nextBtn:hover {
     height: 100%;
     width: 0%;
     
-    background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+    background: #3b82f6;
     
     box-shadow:
-        0 0 8px rgba(56, 189, 248, 0.8),
-        0 0 16px rgba(167, 139, 250, 0.6);
+        0 0 8px rgba(59, 130, 246, 0.8),
+        0 0 16px rgba(59, 130, 246, 0.6);
 
     animation: loadBar 1.5s ease forwards;
 }
 
 body.dark #top-loader-bar {
-    background: linear-gradient(90deg, #60a5fa, #22d3ee, #a78bfa);
+    background: #4e92ff;
     
     box-shadow:
-        0 0 12px rgba(34, 211, 238, 0.9),
-        0 0 24px rgba(96, 165, 250, 0.7);
+        0 0 12px rgba(59, 130, 246, 0.9),
+        0 0 24px rgba(59, 130, 246, 0.7);
 }
+
 
 /* Intro Progress Bar */
 #intro-progress {
     height: 100%;
     width: 0%;
 
-    background: linear-gradient(
-        90deg,
-        #38bdf8,
-        #a78bfa,
-        #f472b6
-    );
+    background: #3b82f6;
 
     box-shadow:
-        0 0 8px rgba(56, 189, 248, 0.8),
-        0 0 16px rgba(167, 139, 250, 0.6);
+        0 0 8px rgba(59, 130, 246, 0.8),
+        0 0 16px rgba(59, 130, 246, 0.6);
 
     transition: width 3s ease;
 }
+
 
 /* Dark Mode */
 body.dark #intro-progress {
